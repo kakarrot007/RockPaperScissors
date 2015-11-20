@@ -12,7 +12,7 @@ public class Rockspaperscissors {
 	
     public static void main(String[] args) throws Exception {
         RPS_Player a = new RPS_RANDOM();
-        RPS_Player b = new RPS_NAVEED_SYED();
+        RPS_Player b = new RPS_Kakarrot007();
         RPS_Comparator game = new RPS_Comparator();
         //System.out.println(game.compare(a, b));
         int i = 0;
