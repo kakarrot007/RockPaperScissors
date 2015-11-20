@@ -1,0 +1,72 @@
+package rockpaperscissors;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class RPS_Kakarrot007 implements RPS_Player{
+	
+	RPS_Kakarrot007(){
+		
+	}
+	
+	static int rockcount = 0;
+	static int papercount = 0;
+	static int scissorcount = 0;
+	static int lastValue = 0;
+	public Random randgen;
+	@Override public int makeSelection(ArrayList<Integer> prev) {
+		int myselection=0;
+		int len = prev.size();
+		int lastIndex = len-1;
+		if(lastIndex != -1){
+			lastValue = prev.get(lastIndex);
+			//System.out.println("Last index value is :: "+lastValue);
+			if(lastValue == 0) rockcount = rockcount+1;
+			else if (lastValue == 1) papercount = papercount+1;
+			else if (lastValue == 2) scissorcount = scissorcount+1;
+		}
+		/*for (int i = 0; i < prev.; i++) {
+			count++;
+			if(count<10){
+				System.out.println("Selection is :: "+prev.get(i));
+				if(prev.get(i) == 0) rockcount++;
+				else if (prev.get(i) == 1) papercount++;
+				else if (prev.get(i) == 2) scissorcount++;
+			}
+		}*/
+		//System.out.println("Rock  count is ::"+rockcount+"Paper count is ::"+papercount+"Scissor count is::"+scissorcount );
+		randgen = new Random();
+		if(rockcount>papercount && rockcount>scissorcount){
+			myselection = 1;
+		}else if(scissorcount>papercount && scissorcount>rockcount){
+			myselection = 0;
+		}else if(papercount>scissorcount && papercount>rockcount){
+			myselection = 2;
+		}else if(rockcount == papercount && rockcount>scissorcount){
+			if(lastValue == 0)	myselection = 1;
+			else if(lastValue == 1) myselection = 2;
+		}else if(rockcount == scissorcount && scissorcount > papercount){
+			if(lastValue == 0)	myselection = 1;
+			else if(lastValue == 2) myselection = 0;
+		}else if(rockcount == papercount && rockcount<scissorcount){
+			myselection = 0;
+		}	
+		else if(rockcount == scissorcount && scissorcount<papercount){
+			myselection = 2;
+		}		
+		else if(papercount == scissorcount && papercount>rockcount){
+			if(lastValue == 1)	myselection = 2;
+			else if(lastValue == 2) myselection = 0;
+		}				
+		else if(papercount == scissorcount && papercount<rockcount){
+			myselection = 1;
+		}						
+		else if(papercount==scissorcount && rockcount==papercount){
+			myselection = randgen.nextInt(3);
+		}
+		return myselection;
+    }
+    
+    @Override public String getStudentName() {
+        return "Naveed Syed, Vanquisher Strategy";
+    }
+}
