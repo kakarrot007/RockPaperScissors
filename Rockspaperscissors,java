@@ -1,0 +1,84 @@
+package rockpaperscissors;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+public class Rockspaperscissors {
+
+    /**
+     * @param args the command line arguments
+     */
+	
+    public static void main(String[] args) throws Exception {
+        RPS_Player a = new RPS_RANDOM();
+        RPS_Player b = new RPS_NAVEED_SYED();
+        RPS_Comparator game = new RPS_Comparator();
+        //System.out.println(game.compare(a, b));
+        int i = 0;
+        while(i<4){
+        	System.out.println("Iteration number :: "+i);
+        	int gameswon = game.compare(a, b);
+            System.out.println("Number of more wins over other = "+gameswon);
+        	i++;
+        }
+        
+        /*ArrayList<Class> list = new ArrayList<>(0);
+        
+        //list.add(new RPS_KRISHNA_GOJE()); (random)
+        //list.add(Class.forName("RPS_Santosh_Reddy_Mothe"));
+        list.add(Class.forName("rockspaperscissors.RPS_ANIRUDH_VASI"));
+        list.add(Class.forName("rockspaperscissors.RPS_GOUTHAM_PERIYALA"));
+        list.add(Class.forName("rockspaperscissors.RPS_KRISHNA_GOJE"));
+        list.add(Class.forName("rockspaperscissors.RPS_KiranMayi_Thota"));
+        list.add(Class.forName("rockspaperscissors.RPS_NEVER_REPEAT"));
+        list.add(Class.forName("rockspaperscissors.RPS_NOLAN_GARMON"));
+        list.add(Class.forName("rockspaperscissors.RPS_Nikhil_Tatikonda"));
+        list.add(Class.forName("rockspaperscissors.RPS_OPP_COUNT"));
+        list.add(Class.forName("rockspaperscissors.RPS_OPTSTRAT1"));
+        list.add(Class.forName("rockspaperscissors.RPS_PRIYANKA_DHARAMKAR"));
+        list.add(Class.forName("rockspaperscissors.RPS_RANDOM"));
+        list.add(Class.forName("rockspaperscissors.RPS_REPAKA_RAMYAREDDY"));
+        list.add(Class.forName("rockspaperscissors.RPS_ROCKS"));
+        list.add(Class.forName("rockspaperscissors.RPS_SRIKRISHNA"));
+        list.add(Class.forName("rockspaperscissors.RPS_Shilpa_Arrabairu"));
+        list.add(Class.forName("rockspaperscissors.RPS_Sirisha_Gujjarlapudi"));
+        //list.add(Class.forName("rockspaperscissors.RPS_Sravani_Manne"));
+        list.add(Class.forName("rockspaperscissors.RPS_Sriharsha_Palamoor"));
+        //list.add(Class.forName("rockspaperscissors.RPS_Sundeepa_Godavarti"));*/
+        
+
+        
+        //RPS_Comparator game = new RPS_Comparator();
+        
+/*        int Ns = list.size();
+        int[] net_wins = new int[Ns];
+        for (int kr = 0; kr < 10; kr++) {
+            for (int k1 = 0; k1 < Ns; k1++) {
+                for (int k2 = 0; k2 < Ns; k2++) {
+                    if (k2 != k1) {
+                        RPS_Player a = (RPS_Player) list.get(k1).newInstance();
+                        RPS_Player b = (RPS_Player) list.get(k2).newInstance();   
+                        int result = game.compare(a, b);
+                        if (result == 1) {
+                            net_wins[k1]++;
+                            net_wins[k2]--;
+                        }
+                        else if (result == -1) {
+                            net_wins[k1]--;
+                            net_wins[k2]++;
+                        }
+                    }
+                }
+            }
+        }
+                
+        for (int k = 0; k < Ns; k++) {
+            System.out.println(((RPS_Player) list.get(k).newInstance()).getStudentName() + ":  " + net_wins[k]);
+        }
+        */
+        
+    }
+    
+}
+
