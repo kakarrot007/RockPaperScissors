@@ -1,0 +1,36 @@
+package rockpaperscissors;
+
+import java.util.ArrayList;
+
+public interface RPS_Player {
+    
+    /**
+     * integer constant representing the selection rock
+     */
+    static final int ROCK = 0;
+    
+    /**
+     * integer constant representing the selection scissor
+     */
+    static final int PAPER = 1;
+    
+    /**
+     * integer constant representing the selection paper
+     */
+    static final int SCISSOR = 2;
+    
+    /**
+     * method that utilizes an arraylist of an opponents previous choices to
+     * make a selection of whether to play rock, scissor, or paper next.
+     * @param prev an arraylist of previous selections made by the opponent
+     * @return the integer RSP_Player.ROCK, RSP_Player.SCISSOR, or RSP_Player.PAPER
+     */
+    int makeSelection(ArrayList<Integer> prev);
+    
+    /**
+     * method that returns name of the student who provided the implementation
+     * @return student's name as a string
+     */
+    String getStudentName();
+    
+}
