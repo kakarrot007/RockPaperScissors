@@ -67,6 +67,6 @@ public class RPS_Kakarrot007 implements RPS_Player{
     }
     
     @Override public String getStudentName() {
-        return "Naveed Syed, Vanquisher Strategy";
+        return "Kakarrot007, Vanquisher Strategy";
     }
 }
